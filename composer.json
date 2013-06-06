@@ -1,0 +1,27 @@
+{
+    "name": "stack/lazy-http-kernel",
+    "description": "HttpKernelInterface lazy proxy.",
+    "keywords": ["stack"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Wiedler",
+            "email": "igor@wiedler.ch"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/http-foundation": "~2.1",
+        "symfony/http-kernel": "~2.1"
+    },
+    "require-dev": {
+        "stack/callable-http-kernel": "~1.0@dev",
+        "stack/url-map": "~1.0@dev"
+    },
+    "autoload": {
+        "psr-0": { "Stack": "src" }
+    },
+    "extra": {
+        "branch-alias": { "dev-master": "1.0-dev" }
+    }
+}
