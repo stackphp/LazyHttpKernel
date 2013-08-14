@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a1fe463165d8c388673228468164f4d7",
+    "hash": "0044f43d5a99682b1a4391b85a26b7df",
     "packages": [
         {
             "name": "psr/log",
@@ -321,6 +321,56 @@
                 "stack"
             ],
             "time": "2013-05-17 16:07:54"
+        },
+        {
+            "name": "stack/url-map",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stackphp/url-map.git",
+                "reference": "ff0e849b2c5958e944ae4bc7bc1d8587598cca7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stackphp/url-map/zipball/ff0e849b2c5958e944ae4bc7bc1d8587598cca7d",
+                "reference": "ff0e849b2c5958e944ae4bc7bc1d8587598cca7d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "symfony/http-foundation": "~2.1",
+                "symfony/http-kernel": "~2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7",
+                "silex/silex": "~1.0@dev",
+                "stack/builder": "~1.0@dev",
+                "stack/callable-http-kernel": "~1.0@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Hochstrasser",
+                    "email": "christoph.hochstrasser@gmail.com",
+                    "homepage": "http://christophh.net"
+                }
+            ],
+            "description": "URL Map middleware.",
+            "time": "2013-05-26 09:00:11"
         }
     ],
     "aliases": [
@@ -328,7 +378,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "stack/callable-http-kernel": 20
+        "stack/callable-http-kernel": 20,
+        "stack/url-map": 20
     },
     "platform": {
         "php": ">=5.4.0"
