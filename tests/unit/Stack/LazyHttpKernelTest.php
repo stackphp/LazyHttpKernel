@@ -87,6 +87,16 @@ class LazyHttpKernelTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(0, $barFactoryCalled);
     }
 
+    public function testShortcutFunction()
+    {
+        $kernel = lazy(function () {
+            return $this->createHelloKernel();
+        });
+
+        $this->assertInstanceOf('Stack\LazyHttpKernel', $kernel);
+        $this->assertSame('Hello World!', $kernel->handle(Request::create('/'))->getContent());
+    }
+
     private function createHelloKernel()
     {
         return $this->createKernel('Hello World!');
