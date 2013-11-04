@@ -11,24 +11,28 @@ The basic example, assumes that `app.php` returns an instance of
 `HttpKernelInterface`:
 
     use Stack\LazyHttpKernel;
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpFoundation\Response;
 
     $app = new LazyHttpKernel(function () {
         return require __DIR__.'/../app.php';
     });
 
+As a shortcut, you can use the `Stack\lazy` function:
+
+    use Stack;
+
+    $app = Stack\lazy(function () {
+        return require __DIR__.'/../app.php';
+    });
+
 When combined with the UrlMap middleware it makes a bit more sense:
 
+    use Stack;
     use Stack\UrlMap;
-    use Stack\LazyHttpKernel;
-    use Symfony\Component\HttpFoundation\Request;
-    use Symfony\Component\HttpFoundation\Response;
 
     $app = ...;
 
     $app = new UrlMap($app, [
-        '/foo' => new LazyHttpKernel(function () {
+        '/foo' => Stack\lazy(function () {
             return require __DIR__.'/../app.php';
         })
     ]);
